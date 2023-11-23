@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Table</title>
+<style>
+table{
+border-collapse: collapse;
+text-align: center;
+}
+h5{
+margin-left:95px;
+margin-bottom: 10px;
+}
+</style>
+</head>
+<body>
+<table border="1px solid black">
+<h5>List of Books </h5>
+<tr>
+<td rowspan="2">Item no </td>
+<td rowspan="2">Item name</td>
+<td colspan="2">Price</td></tr>
+<tr>
+<td>Rs</td>
+<td>Paise</td>
+</tr>
+<tr>
+<td>1</td>
+<td>Programming In Python</td>
+<td>500</td>
+<td>50</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Programming In Java</td>
+<td>345</td>
+<td>00</td>
+</tr>
+</table>
+</body>
+</html>
+
+Q.2 A) Generate a random array of 50 integers and display them using a line chart,
+scatter plot, histogram and box plot. Apply appropriate color, labels and styling options.
+import numpy as np
+import matplotlib.pyplot as plt
+np.random.seed(42)
+data = np.random.randint(1, 100, 50)
+fig, axes = plt.subplots(2, 2, figsize=(12, 8))
+axes[0, 0].plot(data, color='blue', marker='o', linestyle='-')
+axes[0, 0].set_title('Line Chart')axes[0, 0].set_xlabel('Data Point')
+axes[0, 0].set_ylabel('Value')
+axes[0, 1].scatter(range(len(data)), data, color='green', marker='x')
+axes[0, 1].set_title('Scatter Plot')
+axes[0, 1].set_xlabel('Data Point')
+axes[0, 1].set_ylabel('Value')
+axes[1, 0].hist(data, bins=10, color='purple', alpha=0.7)
+axes[1, 0].set_title('Histogram')
+axes[1, 0].set_xlabel('Value')
+axes[1, 0].set_ylabel('Frequency')
+axes[1, 1].boxplot(data, vert=False, patch_artist=True)
+axes[1, 1].set_title('Box Plot')
+axes[1, 1].set_yticklabels([])
+axes[1, 1].set_xlabel('Value')
+fig.suptitle('Random Data Visualization', fontsize=16)
+plt.tight_layout()
+plt.show()
+
+
+
+Q.2 B) Write a Python program to print the shape, number of rows-columns, data types,
+feature names and the description of the data(Use User_Data.csv)
+import numpy as np
+import matplotlib.pyplot as plt
+np.random.seed(42)
+data = np.random.randint(1, 100, 50)
+fig, axes = plt.subplots(2, 2, figsize=(12, 8))axes[0, 0].plot(data, color='blue', marker='o', linestyle='-')
+axes[0, 0].set_title('Line Chart')
+axes[0, 0].set_xlabel('Data Point')
+axes[0, 0].set_ylabel('Value')
+axes[0, 1].scatter(range(len(data)), data, color='green', marker='x')
+axes[0, 1].set_title('Scatter Plot')
+axes[0, 1].set_xlabel('Data Point')
+axes[0, 1].set_ylabel('Value')
+axes[1, 0].hist(data, bins=10, color='purple', alpha=0.7)
+axes[1, 0].set_title('Histogram')
+axes[1, 0].set_xlabel('Value')
+axes[1, 0].set_ylabel('Frequency')
+axes[1, 1].boxplot(data, vert=False, patch_artist=True)
+axes[1, 1].set_title('Box Plot')
+axes[1, 1].set_yticklabels([])
+axes[1, 1].set_xlabel('Value')
+fig.suptitle('Random Data Visualization', fontsize=16)
+plt.tight_layout()
+plt.show()
