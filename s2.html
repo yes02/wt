@@ -35,3 +35,41 @@ Orange Bridge</p>
 <img id="image" src="your_city_image.jpg" alt="Example City Image" width="300">
 </body>
 </html>
+import pandas as pd
+
+# Read the CSV file
+data = pd.read_csv('Data.csv')
+
+# Calculate mean of 'salary' and 'age' columns
+salary_mean = data['salary'].mean()
+age_mean = data['age'].mean()
+
+# Fill missing values with mean
+data['salary'].fillna(salary_mean, inplace=True)
+data['age'].fillna(age_mean, inplace=True)
+
+# Save the modified data back to a new CSV file
+data.to_csv('Modified_Data.csv', index=False)
+
+# Print a message to indicate the process is complete
+print("Missing values replaced and data saved to Modified_Data.csv")
+============================================================================================
+B->
+import pandas as pd
+
+# Read the CSV file
+data = pd.read_csv('Data.csv')
+
+# Calculate mean of 'salary' and 'age' columns
+salary_mean = data['salary'].mean()
+age_mean = data['age'].mean()
+
+# Fill missing values with mean
+data['salary'].fillna(salary_mean, inplace=True)
+data['age'].fillna(age_mean, inplace=True)
+
+# Save the modified data back to a new CSV file
+data.to_csv('Modified_Data.csv', index=False)
+
+# Print a message to indicate the process is complete
+print("Missing values replaced and data saved to Modified_Data.csv")
