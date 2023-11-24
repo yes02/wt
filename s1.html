@@ -60,3 +60,30 @@ max="2018-12-31" /> <br><br>
 </center>
 </body>
 </html>
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# Read the CSV file
+iris_data = pd.read_csv('iris.csv')
+
+# Get the frequency of each species
+species_frequency = iris_data['species'].value_counts()
+
+# Create a Pie plot
+plt.figure(figsize=(8, 8))
+plt.pie(species_frequency, labels=species_frequency.index, autopct='%1.1f%%', startangle=140, colors=['#ff9999','#66b3ff','#99ff99'])
+plt.title('Frequency of Iris Species')
+plt.axis('equal')  # Equal aspect ratio ensures that pie is drawn as a circle.
+plt.show()
+=============================================================================================
+b->
+import pandas as pd
+
+# Read the CSV file
+wine_data = pd.read_csv('winequality-red.csv')
+
+# View basic statistical details
+statistical_details = wine_data.describe()
+
+# Display the details
+print(statistical_details)
